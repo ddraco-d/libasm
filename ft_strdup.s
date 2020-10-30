@@ -10,6 +10,7 @@ _ft_strdup:
 	push	rdi ;remember argument string
 	call	_ft_strlen
 	mov		rdi, rax ;move that strlen return to rdi
+	inc		rdi
 	call	_malloc ;malloc take arg from rdi
 	cmp		rax, 0 ;if malloc returns NULL - out
 	je		_err 

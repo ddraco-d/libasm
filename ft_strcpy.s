@@ -3,14 +3,14 @@ global _ft_strcpy
 section .text
 
 _ft_strcpy:
-			mov		rax, 0
+			mov		rcx, 0
 
 loop:
-			cmp		byte[rsi + rax], 0
+			mov		r10b, byte[rsi + rcx]
+			mov		byte[rdi + rcx], r10b
+			cmp		byte[rsi + rcx], 0
 			je		_exit
-			mov		r10b, byte[rsi + rax]
-			mov		byte[rdi + rax], r10b
-			inc		rax
+			inc		rcx
 			jmp		loop
 
 _exit:
